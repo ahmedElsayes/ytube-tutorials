@@ -1,0 +1,1 @@
+opcua-commander -e opc.tcp://DESKTOP-0J9NJQV:3003/MyLittleServer

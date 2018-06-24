@@ -1,0 +1,20 @@
+{
+  "name": "client_files",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sample_client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ahmed",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "express": "^4.16.3",
+    "node-opcua": "^0.2.3",
+    "npm": "^5.8.0",
+    "semver": "^5.5.0",
+    "socket.io": "^2.1.0",
+    "water-tank": "^1.2.0"
+  }
+}
