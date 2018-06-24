@@ -1,0 +1,7 @@
+#to run the provided code you must first install dependencies (modules)
+# the dependencies are in package.json file for both of server and client sides
+# to install it make the following step in the same directory where files of server-final.js and client-final2.js
+# open the terminal in these two locations and enter this command
+
+npm install
+
