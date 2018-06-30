@@ -1,0 +1,53 @@
+<!--Ahmed Elsayes  student id 272537         ahmed.elsayes@student.tut.fi-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        fieldset {background:lightyellow; border:8px solid yellow; margin-bottom:120px; width:900px;}
+        label {width:180px; display:inline-block; text-align:right; vertical-align:top;}
+    </style>
+    <title>RTU monitor</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h3>User interface to invoke and monitor RTU</h3>
+<p>Invoke events by pressing button!.</p><br/>
+<p id="buttonCount">Invoke events by pressing button!.</p><br/>
+
+<button onclick="buttonClicked1()">Click here to activate operation</button><br/>
+
+    <fieldset>
+        <legend><b>operation 1</b></legend>
+        <P id="button1notify">Here, is the body from RTU as invoking events</P>
+    </fieldset><br>
+
+    <fieldset>
+        <legend><b>trial</b></legend>
+        <P id="butt">Here, is the number of events received from RTU</P>
+    </fieldset>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+//        var socket1 = io1.connect();
+        var socket = io.connect();
+
+        function buttonClicked1(){
+            socket.emit('clicked');
+        }
+
+        //when we receive buttonUpdate, do this
+        socket.on('buttonUpdate', function(cnt){
+            document.getElementById("buttonCount").innerHTML = 'number of button clicks: '+ cnt + '.';
+        });
+        socket.on('evnts', function(bodyinfo){
+            document.getElementById("button1notify").innerHTML = 'payload from RTU =  ' + bodyinfo + '  }';
+        });
+        socket.on('count', function(eventcount){
+            document.getElementById("butt").innerHTML = 'number of events: ' + eventcount + 'event';
+        });
+    </script>
+
+</body>
+</html>

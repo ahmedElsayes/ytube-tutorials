@@ -1,0 +1,83 @@
+<!--Ahmed Elsayes  student id 272537         ahmed.elsayes@student.tut.fi-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        fieldset {background:lightyellow; border:8px solid yellow; margin-bottom:30px; width:900px;}
+        label {width:180px; display:inline-block; text-align:right; vertical-align:top;}
+    </style>
+    <title>User interface</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h3>User interface to invoke and monitor operations in FaStory simulator</h3>
+<p id="buttonCount">Invoke operation through pressing button!.</p><br/>
+
+<button onclick="buttonClicked1()">Click here to activate operation 1</button><br/>
+
+    <fieldset>
+        <legend><b>operation 1</b></legend>
+        <P id="button1notify">Here, it is real time monitor for the notifications from the simulator in case of operation1</P>
+    </fieldset><br>
+
+<button onclick="buttonClicked2()">Click here to activate operation 2</button><br/>
+
+    <fieldset>
+        <legend><b>operation 2</b></legend>
+        <P id="button2notify">Here, it is real time monitor for the notifications from the simulator in case of operation2</P>
+    </fieldset><br>
+
+<button onclick="buttonClicked3()">Click here to activate operation 3</button><br/>
+
+    <fieldset>
+        <legend><b>operation 3</b></legend>
+        <P id="button3notify">Here, it is real time monitor for the notifications from the simulator in case of operation3</P>
+    </fieldset><br>
+
+<button onclick="buttonClicked4()">Click here to get the status of workstation</button><br/>
+
+<fieldset>
+    <legend><b>operation 3</b></legend>
+    <P id="button4notify">Here, it is real time monitor for the status of workstation</P>
+</fieldset><br>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect();
+
+        function buttonClicked1(){
+            socket.emit('click1');
+        }
+        function buttonClicked2(){
+            socket.emit('click2');
+        }
+        function buttonClicked3(){
+            socket.emit('click3');
+        }
+        function buttonClicked4(){
+            socket.emit('workstationbutton');
+        }
+
+        //when we receive buttonUpdate, do this
+        socket.on('buttonUpdate', function(){
+            document.getElementById("buttonCount").innerHTML = 'please, go back to simulator page on port 3000 to monitor the operation';
+        });
+        socket.on('button1', function(bodyinfo){
+            document.getElementById("button1notify").innerHTML = '<br>body information from operation 1{  ' + bodyinfo + '  }';
+        });
+        socket.on('button2', function(bodyinfoo){
+            document.getElementById("button2notify").innerHTML = '<br>body information from operation 2{  ' + bodyinfoo + '  }';
+        });
+        socket.on('button3', function(bodyinfooo){
+            document.getElementById("button3notify").innerHTML = '<br>body information from operation 3{  ' + bodyinfooo + '  }';
+        });
+        socket.on('workstation_notify', function(statusw){
+            document.getElementById("button4notify").innerHTML = '<br>status of workstation:{  ' + statusw + '  }';
+        });
+    </script>
+
+
+</body>
+</html>

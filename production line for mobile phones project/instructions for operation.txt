@@ -1,0 +1,16 @@
+*This code has been developed to control Fastory production line Remotely ( HTML, CSS, JAVASCRIPT, NODEJS)
+
+1-to operate the application the html file must exist in puplic folder as it recently
+
+2- to download the modules needed for operation enter this command in terminal in the smae directory of "server.js":
+install npm
+
+3- run server.js
+
+2- the user interface can be accessed on this page  " http://localhost:3333/invoker "
+
+* instructions in the web page shows how functions work
+
+
+
+ //Ahmed Elsayes     Student No. 272537            "ahmed.elsayes@student.tut.fi"

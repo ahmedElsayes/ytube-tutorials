@@ -1,0 +1,131 @@
+What are the various ways you guys can think of using which data can be sent to the server from the front end …hmm,,,,, By Posting data to the Server ?????? Yes , data can be sent to the server by posting the required data from HTML forms . hmm,,,,,,Using AJAX ????Yes , AJAX is a very popular implementation using which browsers can interact with the server .But the question now would be “Dude the title of the post  suggests that Web-sockets too are used to interact and send data to the server ,  Then what the hell is a Web-socket ?? , How different is it from other means by which data is sent to the server  ?? “
+
+Now  you know that web-sockets are one of the means by which the front end JavaScript can interact and send data to the server , But here are the reasons why it is very different from other implementations which are used to achieve similar objective.Ever since the onset of web applications, developers have worked towards different ways of getting duplex communication between the server and the browser. Be it using Java, Flash, Comet, or many other workarounds, all aim to do the same. But for the first time, there is a specification to build a full-duplex communication system by using HTML5 WebSockets. WebSocket is a revolutionary, new communication feature in the HTML5 specification that defines a full-duplex communication channel operating over the Web through a single socket.It is not, and will never be, available on older browsers that are still in use. Socket.io is an abstraction layer for WebSockets,with Flash, XHR, JSONP, and HTMLFile fallbacks. Socket.io provides an easy server and client library for making real-time, streaming updates between a web server and a browser client.
+The Wiki page “Unlike HTTP, WebSocket provides for full-duplex communication. Additionally, Websocket enables streams of messages on top of TCP. TCP alone deals with streams of bytes with no inherent concept of a message. Before WebSocket, port 80 full-duplex communication was attainable using Comet Channles; however, Comet implementation is nontrivial, and due to the TCP handshake and HTTP header overhead, it is inefficient for small messages.
+
+Summing everything up , the advantage of websockets are listed below ,
+
+The WebSocket protocol makes possible more interaction between a browser and a web site, facilitating live content without page refresh
+Websockets are amazingly fast compared any other alternative implementations , so it can be used for creating Real-Time web applications (Games , Live News feed)
+Websockets are Standardized being part of HTML5
+Support across all major browsers
+Ease of use
+Ahhhhh , i believe all of you had enough going through the details of webSockets ?? ?? Lets start with how to make use of WebSockets features using Node.JS server in the backend . This is not an introductory tutorial on Node.JS ( Here is an introductory tutorial on writing WebServers using Node.JS ) .
+
+Here are The NodeJs modules which are used in coding the backend .
+
+Express – It is a Web Development  Framework for Node.JS ExpressJS
+Socket.IO – Socket.io is a node module available through the npm,It has two parts: a client-side library that runs in the browser, and a server-side library for Node.JS. Both components have a nearly identical API. Like node.js, it is event-driven.(socket.io).The Client side JavaScript to be included will be generated dynamically by this module.
+       Installing the dependencies
+
+npm install express
+npm install socket.io
+The Server
+
+var express = require('express');
+var http = require('http');
+var io = require('socket.io');
+
+
+var app = express();
+app.use(express.static('./public'));
+//Specifying the public folder of the server to make the html accesible using the static middleware
+
+var server =http.createServer(app).listen(8124);
+//Server listens on the port 8124
+io = io.listen(server); 
+/*initializing the websockets communication , server instance has to be sent as the argument */
+
+io.sockets.on("connection",function(socket){
+	/*Associating the callback function to be executed when client visits the page and 
+	  websocket connection is made */
+	 
+	  var message_to_client = {
+	  	data:"Connection with the server established"
+	  }
+	  socket.send(JSON.stringify(message_to_client)); 
+	  /*sending data to the client , this triggers a message event at the client side */
+	console.log('Socket.io Connection with the client established');
+	socket.on("message",function(data){
+		/*This event is triggered at the server side when client sends the data using socket.send() method */
+		data = JSON.parse(data);
+
+		console.log(data);
+		/*Printing the data */
+		var ack_to_client = {
+	  	data:"Server Received the message"
+	  }
+	  socket.send(JSON.stringify(ack_to_client));
+		/*Sending the Acknowledgement back to the client , this will trigger "message" event on the clients side*/
+	});
+
+});
+
+Save the code in a file called server.js , run it using node executable (node.js should be installed on the system) ” node server.js ”
+
+Create a folder by name public and place the html file inside it .
+
+Here is socket.html file which handles the client side connection (save it inside a folder named public within the root directory of the server file)
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>webSockets and Socket.IO</title>
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script> 
+		<!--The above library(/socket.io/socket.io.js) will be generated by socket.io module of server -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+	</head>
+	<body>
+		<form>
+			
+			<input type="text" id="message" /> <!--text form to send data to the server-->
+			<input id="submit" type="button" value="Send data to Server">
+			<div id="content"></div> <!--This is where the data from the server is added-->
+
+		</form>
+
+		<script type="text/javascript">
+			var socket = io.connect("/"); 
+			/*Initializing the connection with the server via websockets */
+			socket.on("message",function(message){  
+				/*
+					When server sends data to the client it will trigger "message" event on the client side , by 
+					using socket.on("message") , one cna listen for the ,message event and associate a callback to 
+					be executed . The Callback function gets the dat sent from the server 
+				*/
+				console.log("Message from the server arrived")
+				message = JSON.parse(message);
+				console.log(message); /*converting the data into JS object */
+				$('#content').append('<div >'+message.data+'</div>'); /*appending the data on the page using Jquery */
+			});
+			$(function(){
+				$('#submit').click(function(){ /*listening to the button click using Jquery listener*/
+					var data = { /*creating a Js ojbect to be sent to the server*/ 
+						message:$('#message').val(), /*getting the text input data  	*/
+						author:'karthic'				
+					}
+					socket.send(JSON.stringify(data)); 
+					/*Data can be sent to server very easily by using socket.send() method 
+					The data has to be changed to a JSON before sending
+                                          it (JSON.stringify() does this job )*/
+					/* This triggers a message event on the server side 
+					and the event handler obtains the data sent */ 
+
+					$('#message').val('');
+					//Emptying the text box value using jquery 
+
+				});
+			});
+
+		</script>
+	</body>
+</html>
+Go to the browser and visit the URL 127.0.0.1:8124/socket.html
+
+The comments inside the code explains it
+
+Here is the screenshot of the application
+
+Image
+
+Hope that this blog was very interesting and helped you to understand how to use websockets to communicate with the Node.JS server …..Will come back soon with lot more exciting posts , till then Happy Codin

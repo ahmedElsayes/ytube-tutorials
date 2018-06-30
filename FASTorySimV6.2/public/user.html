@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Socket.io Demo</title>
+      <meta charset="utf-8">
+      <script src="http://localhost:3001/socket.io/socket.io.js"></script>
+  		<link rel='stylesheet' href='/stylesheets/styleFMW.css' />
+	 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		  <script src="angular.min.js"></script>
+		  <script src="script2.js"></script>
+		  <script>
+			var socket = io.connect('http://localhost:3001');
+			var RTU = io.connect('http://localhost:3002');
+			var HostName = "http://localhost:3000";
+		  </script>
+		  <script src="Simulator.js"></script>
+		<link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+		 <h1>Socket.io Demo</h1>
+      <button onclick="buttonClicked()">Click me</button>
+		 <!-- <p id="buttonCount">The button has been clicked 0 times.</p> -->
+		 <!-- <button onclick="buttonClicked()">Click me</button> -->
+		 <!-- <script src="/socket.io/socket.io.js"></script> -->
+		 <script>
+			 function buttonClicked(){
+			   socket.emit(http://localhost:3000/RTU/SimROB1/services/LoadPaper);
+			 }
+
+			 // //when we receive buttonUpdate, do this
+			 // socket.on('buttonUpdate', function(data){
+				//  document.getElementById("buttonCount").innerHTML = 'The button has been clicked ' + data + ' times.';
+			 // });
+
+		</script>
+   </body>
+</html>

@@ -1,0 +1,16 @@
+*This code has been developed to control RTU inico ( HTML, CSS, JAVASCRIPT, NODEJS, XML)
+
+
+
+1-to download the modules needed for operation enter this command in terminal in the same directory of "REST.js":
+  * go to the folder where files of REST  SOAP  package.json  are exist
+  * left shift key + right click   /   open terminal or open power shell(according your operating system)
+  * enter this command:   (npm install)   (notice: you must have access to internet when make this command)
+
+2- run REST.js   or   SOAP.js    using this command:   (node REST.js)     or   (node SOAP.js)
+
+ * you must be connected to the RTU to see the variation in outputs
+
+
+
+

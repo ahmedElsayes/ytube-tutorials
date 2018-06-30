@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--<meta http-equiv="refresh" content="1">-->
+		<title>User Interface</title> 
+		<script src="{{Host}}:{{SocketPort1}}/socket.io/socket.io.js"></script>
+		<link rel='stylesheet' href='/stylesheets/styleFMW.css' />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="angular.min.js"></script>
+		<script src="script2.js"></script>
+		<script>
+			var socket = io.connect('{{Host}}:{{SocketPort1}}');
+			var RTU = io.connect('{{Host}}:{{SocketPort2}}');
+			var HostName = "{{Host}}:{{Port}}";
+			
+			var Ink = [[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1]];
+			var	ZonesPresence = [[0,0,0,0,0],
+								[0,0,0,0,0],
+								[0,0,0,0,0],
+								[0,0,0,0,0],
+								[0,0,0,0,0],
+								[0,0,0,0,0],
+								[0,0,0,0,0],
+								[0,0,0,0,0],
+								[0,0,0,0,0],
+								[0,0,0,0,0],
+								[0,0,0,0,0],
+								[0,0,0,0,0]];
+			var	RFIDIndication = [0,0,0,0,0,0,0,0,0,0,0,0];
+			var	StopperIndication = [[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1]];
+			var	PalletState =  [[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],   // [WS][Zone][Parts(0:empty, 1:red, 2:Green, 3:Blue)], Parts : pallet, Paper, Frame, Screen, Keyboard, PalletID , Recipe
+								[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+								[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+								[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+								[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+								[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+								[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+								[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+								[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+								[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+								[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+								[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]]];
+			var	WS_State = [[0,0,0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]; //[Conveyor(BUSY/IDLE),Robot(BUSY/IDLE)] for WS1 [Conveyor(BUSY/IDLE),Robot(BUSY/IDLE),Inconv,outConv]
+			var PalletState_Res = [{{PalletState}}];
+			var ZonesPresence_Res = [{{ZonesPresence}}];
+			var RFIDIndication = [{{RFIDIndication}}];
+			var StopperIndication_Res = [{{StopperIndication}}];
+			var WS_State_Res = [{{WS_State}}];
+			var InkoveMethod = [{{InkoveMethod}}];
+		</script>
+		<script src="Simulator.js"></script>
+		
+	</head>
+	<body>
+    <div style="background-color:#0066dd; width:2100px ;height:70px;text-align: center;">
+    <h1 style="font-family:Verdana;font-size:10;color:#ffffff;height:100%;position: relative; vertical-align: text-bottom;margin-top: 0em;margin-bottom: 0em;align:justify">User Interface</h1>
+    </div>
+	<h1>{{pageTitle}}</h1>
+    <p>ZonesPresence:   {{ZonesPresence}}</p>
+	<br/>
+    <p>StopperIndication:   {{StopperIndication}}</p>
+	<br/>
+	<p>RFIDIndication:   {{RFIDIndication}}</p>
+	<br/>
+	<form method="post" action="/process">
+		<label>process1<label/><br/>
+		<input type="text" name="process1">
+		<label>process2<label/><br/>
+		<input type="text" name="process2">
+		<label>process3<label/><br/>
+		<input type="text" name="process3">
+		<input type="submit">
+	</form>
+	</body>
+</html>
