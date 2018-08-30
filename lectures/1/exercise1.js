@@ -1,7 +1,6 @@
 // simple logical operations with if condition
 var x = 6;
 var y = 8;
-var f = 8;
 var z = 7;
 if (x > z && y > z){
 console.log("the result is true");
