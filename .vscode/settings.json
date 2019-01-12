@@ -1,2 +1,17 @@
 {
+    "workbench.colorTheme": "Visual Studio Dark",
+    "files.associations": {
+        "python.pythonPath1": "c:/python27/python.exe",
+        "python.pythonPath2": "C:/Users/Käyttäjä/AppData/Local/Programs/Python/Python36-32/python.exe"
+    },
+    "window.zoomLevel": 0,
+    "python.pythonPath": "C:\\Python27\\python.exe",
+    "[javascript]": {},
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "git.autofetch": true,
+    "team.showWelcomeMessage": false,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true
 }
