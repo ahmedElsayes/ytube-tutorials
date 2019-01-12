@@ -5,7 +5,7 @@
         "python.pythonPath2": "C:/Users/Käyttäjä/AppData/Local/Programs/Python/Python36-32/python.exe"
     },
     "window.zoomLevel": 0,
-    "python.pythonPath": "C:\\Python27\\python.exe",
+    "python.pythonPath": "C:\\Users\\Käyttäjä\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe",
     "[javascript]": {},
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
@@ -13,5 +13,7 @@
     "git.autofetch": true,
     "team.showWelcomeMessage": false,
     "git.confirmSync": false,
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }
