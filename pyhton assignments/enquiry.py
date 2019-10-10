@@ -10,6 +10,3 @@ while answer:
     else:
         print("Incorrect entry.")
         answer = (input("Please retry: "))
-    
-
-
