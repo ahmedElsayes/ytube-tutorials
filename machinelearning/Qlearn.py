@@ -1,17 +1,12 @@
 
-print('Hello ahmed')
-x = 4
-y = 5
-z = x+y
-print(z)
-print('Hello ahmed')
+import numpy as np
+import gym
+import random
 
-print('Hello ahmed')
+env = gym.make("Taxi-v3")
 
+env.reset()  # reset environment to a new, random state
+env.render()
 
-print('Hello ahmed')
-
-print('Hello ahmed')
-
-
-print('Hello ahmed')
+print("Action Space {}".format(env.action_space))
+print("State Space {}".format(env.observation_space))

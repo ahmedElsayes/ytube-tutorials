@@ -1,0 +1,5 @@
+ctrl+shift+p        command platte to navigate in enviroments and interpreter
+ctrl+\      Kill active terminal
+ctrl+/      comment script lines
+ctrl+z      undo
+shift+enter     execute marked lines from the script
