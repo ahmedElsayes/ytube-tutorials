@@ -12,7 +12,7 @@ class employee:
         employee.num_ofemployee += 1
     def employee_details(self):
         return 'the employee is {} {},his email is {} and get paid a salary of {}'.format(self.first, self.last, self.email, self.salary)
-    def salary_after_raise(self):
+    def salary_after_raise(self):       # the goal of this command is how to modify the class attribut(salary) by using a method
         self.salary = int(self.salary * self.raise_salary)
     
     
@@ -21,7 +21,7 @@ print('********number of employees before calling is {} '.format(employee.num_of
 first_employee = employee('ahmed', 'mostafa', 2000)
 second_employee = employee('mahmoud', 'hassan', 2200)
 third_employee = employee('hosaam', 'ali', 2400)
-first_employee.raise_salary = 1.1
+first_employee.raise_salary = 1.1       # the goal is to add an attribut to this specific instance class
 
 print('********number of employees before calling is {}'.format(employee.num_ofemployee))
 print('********', first_employee.employee_details())
