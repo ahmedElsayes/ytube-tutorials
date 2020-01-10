@@ -1,7 +1,7 @@
 # the goal of this example is to compare the different methodes and see the possibleuses of it
 # instance method, class method and static method
 # also learning how to automate the generation of new class instances just feeding new employees to the system
-
+import datetime
 class employee:
     raise_amt = 1
     def __init__(self, first, last, salary):     # the idea of this step to define the class attributes
@@ -24,7 +24,14 @@ class employee:
     # class method to raise the salary by specific percentage
     @classmethod
     def set_raise_amt(cls, amount):
-        cls.raise_amt = amount 
+        cls.raise_amt = amount
+    # static method to decide if a specific date is a working day or offday
+    @staticmethod
+    def day_situation(the_date):
+        if the_date.weekday() == 5 or the_date.weekday() == 6:
+            return 'offday'
+        else:
+            return 'normal working day'
 
 employee1 = employee('ahmed', 'mostafa', 2000)
 employee2 = employee('mahmoud', 'hassan', 2200)
@@ -49,3 +56,6 @@ print(employee1.employee_details())
 # print details of the new employee
 print(new_emp1.employee_details())
 print(new_emp2.employee_details())
+# testing the static method by picking a random day and see if it is working day or offday
+the_day = datetime.date(2020, 1, 27)
+print(employee1.day_situation(the_day))
