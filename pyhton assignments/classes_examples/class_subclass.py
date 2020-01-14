@@ -81,3 +81,7 @@ Mng_1.add_employee(emp_1)
 Mng_1.remove_employee(Dev_1)
 
 Mng_1.print_employees()
+print(isinstance(Mng_1, Developer))
+print(isinstance(Mng_1, employee))
+print(issubclass(Developer, employee))
+print(issubclass(Developer, manager))
