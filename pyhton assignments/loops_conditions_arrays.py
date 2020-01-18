@@ -22,8 +22,6 @@ else:
     print("not defined")
 
 
-
-
 ## example on for loop in range
 for t in range(5, 80, 5):   # (start, stop, step)
     print(t+2)
@@ -35,14 +33,22 @@ while u < 15:
     u += 3
     if (u >= 10):
         break
-## Example to make a program counts all numbers except some in list
-print("Example to make a program counts all numbers except some in list")
 
-numlist = [5, 7, 96, 87, 25, 12, 34, 1, 8, 17]
-for xx in range(1, 80, 5):  # (start, stop, step)
+## Example on for loop to make a program counts all numbers except some in list
+print("Example to make a program counts all numbers except some in list")
+numlist = [5, 7, 96, 87, 25, 12, 30, 1, 8, 40, 45, 50]
+for xx in range(0, 80, 5):  # (start, stop, step)
     if xx in numlist:
         continue
     print(xx)
+## Example on for loop to make a program counts all numbers in specific range that included in the list only 
+print('example to count only ten multiplied numbers')
+number_list2 = [7, 5, 25, 40, 80, 90, 58, 63, 30, 587, 10]
+for xx2 in range(0,110,10):
+    if xx2 in number_list2:
+        print(xx2)
+    else:
+        continue
 
 ## Example on defining functions
 print("this example to show the use of functions")
@@ -64,7 +70,6 @@ def gendertype(gender="unknown"):
         gender = "female"
     print(gender)
     pass
-
 
 gendertype("m")
 gendertype("f")
