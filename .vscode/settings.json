@@ -5,7 +5,7 @@
         "python.pythonPath2": "C:/Users/Käyttäjä/AppData/Local/Programs/Python/Python36-32/python.exe"
     },
     "window.zoomLevel": 0,
-    "python.pythonPath": ".venv\\Scripts\\python.exe",
+    "python.pythonPath": "C:\\Users\\Käyttäjä\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe",
     "[javascript]": {},
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
