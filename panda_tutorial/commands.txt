@@ -1,0 +1,6 @@
+python -m pip install jupyterlab	# the command to install jupyter notebook
+
+jupyter notebook		# the comand to open jupyter in the targeted directory
+
+.venv\Scripts\activate		# activate venv
+.venv\Scripts\deactivate	# deactivate venv
