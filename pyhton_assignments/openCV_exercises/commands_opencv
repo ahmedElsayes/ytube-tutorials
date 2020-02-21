@@ -1,0 +1,8 @@
+python -m pip install opencv-python
+import cv2
+the_img = cv2.imread('lena.jpg',1)
+#the_img
+cv2.imshow('the image', the_img)
+cv2.waitKey(5000)
+cv2.destroyAllWindows()
+cv2.imwrite('lena_image.png', the_img)
