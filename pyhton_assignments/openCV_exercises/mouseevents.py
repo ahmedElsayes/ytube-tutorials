@@ -23,9 +23,8 @@ def event_click(event,x,y,flags,param):
         cv.imshow('image', img)
 
 # img = np.zeros((512, 512, 3), np.uint8)
-img = cv.imread('lena.jpg', 0)
+img = cv.imread('afganG.jpg')
 cv.imshow('image', img)
 cv.setMouseCallback('image',event_click)
 cv.waitKey(0)
 cv.destroyAllWindows()
-
