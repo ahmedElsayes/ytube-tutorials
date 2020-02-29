@@ -1,5 +1,7 @@
 ## operations on strings
-
+import time
+import consecutive_test as test
+# from consecutive_test import catch_repeated
 var1 = "Ahmed"
 var2 = "mohamed"
 
@@ -106,4 +108,18 @@ for f in list[:5]:   # print elements of array from 1 to 5
 for g in list[4:]:     # print last 4 elements of array
     print(g)
 for z in list[-1:]:
+    time.sleep(1)       # example of introducing delay in the python script
     print(z)
+
+# example on calling a fuction from another script in this script 
+
+List = [2, 5, 8, 9, 10, 10, 28, 25, 9, 22, 8, 36, 88, 88]
+test.catch_consecutive(List)
+test.catch_repeated(List)
+# catch_repeated(List)
+z = test.add_compare(20,5)
+print('z = ', z)
+
+# creat a list with specific range
+list5 = [*range(5,90,5)]
+print('list5...............', list5[-5:-1])
