@@ -1,8 +1,6 @@
 
 # algorithm for catcing the repeated consecutive elements in array
-
 def catch_repeated(list):
-
     filt=[]
     # print(length2)
     for i in list:
@@ -11,13 +9,9 @@ def catch_repeated(list):
         else:
             filt.append(i)
             continue
-
-
-
 #####################
 # algorithm for catching the repetead elements in array
 def catch_consecutive(list2):
-
     # List = [2, 5, 8, 9, 10, 10, 28, 25]
     length2 = len(list2)
     # print(length2)
