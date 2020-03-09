@@ -6,10 +6,12 @@
     "configurations": [
         
         {
-            "name": "Python: Current File",
+            "name": "Python: Current File (Integrated Terminal)",
             "type": "python",
             "request": "launch",
-            "program": "${file}"
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}"
         },
         {
             "type": "node",

@@ -6,3 +6,9 @@ cv2.imshow('the image', the_img)
 cv2.waitKey(5000)
 cv2.destroyAllWindows()
 cv2.imwrite('lena_image.png', the_img)
+## for bitwise operations
+example on and logic:     bitand = cv.bitwise_and(<first image>,<second image>)
+example on or logic:     bitOr = cv.bitwise_or(<first image>,<second image>)
+example on Xor logic:     bitXor = cv.bitwise_Xor(<first image>,<second image>)
+example on Not logic:     bitNot = cv.bitwise_not(<first image>,<second image>)
+
