@@ -12,3 +12,10 @@ example on or logic:     bitOr = cv.bitwise_or(<first image>,<second image>)
 example on Xor logic:     bitXor = cv.bitwise_Xor(<first image>,<second image>)
 example on Not logic:     bitNot = cv.bitwise_not(<first image>,<second image>)
 
+The most important morophological operations are errosion and dilation filter the images from noise using kernel filter
+medianBlur() filter is for salt and pepper noise
+blur() filter is like the filter2D() filter as both are averaging to smooth the image
+GaussianBlur() use non-homogeneous filter to exclude the unwanted features and filter the image
+bilateralFilter() can be used to clarify the feature edges in the image
+
+
