@@ -118,7 +118,7 @@ test.catch_consecutive(List)
 test.catch_repeated(List)
 # catch_repeated(List)
 z = test.add_compare(20,5)
-print('z = ', z)
+print('the value z = ', z)
 
 # creat a list with specific range
 list5 = [*range(5,90,5)]
