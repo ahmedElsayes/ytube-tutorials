@@ -1,7 +1,7 @@
 import _thread
 import numpy as np
 import time
-#import cv2 as cv
+# import cv2 as cv
 # this part is to simulate the variation in pressure and temperature
 temp_ = np.arange(24,300,1)   # assuming that ambient temperature = 24, and heating capacity of heater is upto 300
 T_time_ = 0.1    # adjust the heater speed
