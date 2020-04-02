@@ -12,11 +12,12 @@ def output(x):
     print(x)
 
 # Trackbar name, the image in connection, start varying point, end point, fuction to excute
-cv.createTrackbar('thre', 'track', 0, 255, output)
+cv.createTrackbar('thre', 'track', 150, 255, output)
+
 while(1):
     threvar = cv.getTrackbarPos('thre', 'track')
     _, th1 = cv.threshold(img, threvar, 255, cv.THRESH_BINARY)
-
+    # find the contours resulted from frames substraction
     cv.imshow('image', th1)
     k = cv.waitKey(1)
     if k == 27:
