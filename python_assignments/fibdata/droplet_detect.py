@@ -12,7 +12,7 @@ def output(x):
     print(x)
 
 # Trackbar name, the image in connection, start varying point, end point, fuction to excute
-cv.createTrackbar('thre', 'track', 150, 255, output)
+cv.createTrackbar('thre', 'track', 50, 255, output)
 
 while(1):
     threvar = cv.getTrackbarPos('thre', 'track')

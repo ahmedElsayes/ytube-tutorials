@@ -45,6 +45,9 @@ for e, zz in enumerate(difference):
 
 XX = np.linspace(0,800,len(blackpixels_perCloumn))
 plt.plot(XX,blackpixels_perCloumn)
+plt.title("A number of black pixels per each column in the image")
+plt.xlabel("column number")
+plt.ylabel("intensity of black pixels")
 
 # start coordinate, end coordinate, color(BGR), thickness / the line to mark the starting point for droplet formulation
 cv.line(imfinal, (break_point, 10), (break_point, 790), (0, 0, 255), 2)
@@ -52,6 +55,7 @@ cv.line(imfinal, (break_point, 10), (break_point, 790), (0, 0, 255), 2)
 plt.show()
 # cv.imshow('image', th1)
 cv.imshow('final_image', imfinal)
+cv.imwrite('dropletStart_detection.jpg', imfinal)
 K = cv.waitKey()
 # now exploring different types of threshold
 # or Gaussian type [Numbers: threshold, number of pixels to be in calculation, the offset constant]
