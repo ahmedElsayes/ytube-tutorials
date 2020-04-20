@@ -4,7 +4,7 @@
         "python.pythonPath1": "c:/python27/python.exe",
         "python.pythonPath2": "C:/Users/Käyttäjä/AppData/Local/Programs/Python/Python36-32/python.exe"
     },
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "python.pythonPath": ".venv\\Scripts\\python.exe",
     "[javascript]": {},
     "atomKeymap.promptV3Features": true,
