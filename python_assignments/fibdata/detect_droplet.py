@@ -51,8 +51,7 @@ plt.ylabel("intensity of black pixels")
 
 # start coordinate, end coordinate, color(BGR), thickness / the line to mark the starting point for droplet formulation
 cv.line(imfinal, (break_point, 10), (break_point, 790), (0, 0, 255), 2)
-# find the contours resulted from frames substraction
-plt.show()
+# plt.show()
 # cv.imshow('image', th1)
 cv.imshow('final_image', imfinal)
 cv.imwrite('dropletStart_detection.jpg', imfinal)
@@ -62,3 +61,4 @@ K = cv.waitKey()
 # to get the color channels (RGB) from the trackbar
 if K == 27:
     cv.destroyAllWindows()
+plt.show()
