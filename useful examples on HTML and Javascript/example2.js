@@ -47,7 +47,7 @@ function displayCustomerChoices(){
  * returns all possible combination.
  */
 
-function pickupall()
+// function pickupall()
 //Let's use our function
 console.log(sum(231, 44523));
 console.log(sum("A", "B"));
