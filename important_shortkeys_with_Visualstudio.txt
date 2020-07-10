@@ -1,5 +1,10 @@
-ctrl+shift+p        command platte to navigate in enviroments and interpreter
-ctrl+\      Kill active terminal
-ctrl+/      comment script lines
-ctrl+z      undo
+ctrl+shift+p    command platte to navigate in enviroments and interpreter
+ctrl+\     	 Kill active terminal
+ctrl+/      	comment script lines		%personal labtop
+ctrl+z      	undo
 shift+enter     execute marked lines from the script
+
+# Tab                   to indent
+# shift+Tab             to outdent
+# ctrl+R                to comment line		% work labtop
+# ctrl+T                to uncomment		% work labtop

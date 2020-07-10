@@ -1,0 +1,185 @@
+// My developed login interface for The HMI of ALD:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title of the custom login page -->
+    <title>PicoLogIN Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+
+<style>
+    /* Styles for custom login page
+    Overwrite or add new styles here
+    */
+    body {
+        font-family: Segoe UI,Tahoma,Arial,Verdana;
+        color: #4c6374;
+        font-size: 12px;
+        padding: 0px;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-image: radial-gradient(#D7DCE2, #A3ADB7);
+        overflow: hidden;
+    }
+    a {
+        color: #4794da;
+    }
+
+    .outer-container {
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+        position: relative;
+        min-height: 0;
+    }
+
+    .main-container {
+        box-sizing: border-box;
+        float: left;
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+        overflow: auto;
+        margin-top: 46px;
+        padding-bottom: 32px;
+        max-height: none;
+    }
+		.h2 {
+			text-align: center;
+			}
+
+    .login-container {
+        background-color: rgba(255,255,255,0.5);
+        border-color: #666666;
+        border-width: 1px;
+        border-style: solid;
+        padding: 90px;
+        margin-left: 800;
+		margin-top: 300;
+		margin-bottom: 300;
+    }
+	.nav-item {
+		border-color: black;
+        border-width: 2px;
+        border-style: solid;
+		
+	}
+	.nav-link {
+		
+		margin-left: 10px;
+		padding: 30px;
+		font-size: 20px;
+	}
+
+
+    .header {
+        box-sizing: border-box;
+        width: 100%;
+        position: fixed;
+        display: table;
+        background-color: #4c6374;
+        height: 46px;
+        font-weight: normal;
+    }
+
+    .header-text {
+        color: white;
+        font-size: 20px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+        .header-text.left {
+            padding-left: 15px;
+            text-align: left;
+        }
+
+        .header-text.right {
+            padding-right: 15px;
+            text-align: right;
+        }
+		
+
+    .login-container label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input, button, textarea, select {
+        width: 165px;
+        font-size: 100%;
+        background-color: white;
+        padding: 0;
+        margin: 0;
+        height: 22px;
+        box-sizing: border-box;
+        display: inline-block;
+        text-align: start;
+        cursor: text;
+        border: none;
+        box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.02), inset 0px 0px 3px 2px rgba(0,0,0,0.3);
+        color: #4c6374;
+    }
+
+        input[type=password] {
+			width: 330px;
+			height: 44px;
+            border: 0px;
+            cursor: pointer;
+            text-align: center;
+            background-image: linear-gradient(135deg, #eff1f3, #aeb9c2);
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.6);
+            color: #4794da;
+        }
+
+        button {
+			margin-left: 80px;
+		    margin-top: 60px;
+            border: 0px;
+            cursor: pointer;
+            text-align: center;
+            background-image: linear-gradient(135deg, #eff1f3, #aeb9c2);
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.6);
+            color: #4794da;
+        }
+
+
+    }
+</style>
+
+<body>
+    <div class="outer-container">
+        <!-- HTML for custom login page-->
+        <!-- Make your changes here -->
+        <div class="header">
+            <div class="header-text right">Sign in as system admin</div>
+        </div>
+		
+        <div class="main-container">
+		<h2 id="title">Picosun Morpher F</h2><br>
+		<div class="login-container">
+			<!-- will be overwritten later if this acts as a switch user page -->
+			<ul class="nav nav-tabs">
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Operator</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Supervisor</a>
+			  </li>
+			</ul><br>
+			<input id="password-input" type="password" autofocus autocomplete="off" placeholder="password"><br>
+
+			<!-- will be overwritten later if this acts as a switch user page -->
+			<button id="login-button" type="button">Login</button>
+		</div>
+        </div>
+    </div>
+</body>
+</html>
