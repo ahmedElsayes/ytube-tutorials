@@ -5,7 +5,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> -->
   </head>
   <style>
     body {
@@ -75,15 +75,18 @@
     margin-top: 60px;
     height: 60px;
     width: 300px;
-    text-align: center;
-    background-color: rgb(218, 218, 218);
-    border: 3px solid rgb(218, 218, 218);
+    text-align: left;
+    background-color: rgb(240, 240, 240);
+    border: 3px solid rgb(230, 230, 230);
     border-radius: 5px;
     font-size: 17px;
     }
-    .login-box i{
+    .lockerIcon {
+      margin-left: -45px;
+    }
+    /* .login-box i{
       font-size: 30px;
-        }
+        } */
     button {
       font-size: 19px;
       width: 200px;
@@ -105,7 +108,8 @@
       margin:auto;
     
     }
-    .rememberMe label {
+    .checkme {
+      margin: auto;
       width: 200;
       cursor: pointer;
       font-family: Arial, Helvetica, sans-serif;
@@ -114,19 +118,19 @@
     }
 
     input[type=checkbox] {
-      width: 15px; 
-      height: 15px;
+      width: 20px; 
+      height: 20px;
       cursor: pointer;
       margin-left: 10px;
-     
     }
+    
     .logo {
       width: 300px;
       height: 50px;
     }
-    .logIcon {
+    .logoutIcon {
       width: auto;
-      height: 30px;
+      height: 27px;
       margin-left: 5px;
     }
 
@@ -156,20 +160,20 @@
         <input  type="button" id="user-name-input" class="user-name-input" name="user-access" value="Supervisor" onclick="PressEffect(event)"><br>
         <input id="password-input" type="password" autofocus autocomplete="off" placeholder="Password">
         <!-- <i class='fas fa-lock'></i><br> -->
-        <i> <img src="public/lock-icon.svg"> </i>
+        <i class="lockerIcon"> <img src="public/lock-icon.svg"> </i>
         <!-- <button id="login-button" type="button">
           Login
           <span class="glyphicon glyphicon-log-in"></span>
         </button> -->
-        <button type="button" id="login-button">Login <img src="public/logoutIcon.svg" class="logIcon"> </button>
+        <button type="button" id="login-button">Login <img src="public/logoutIcon.svg" class="logoutIcon"> </button>
       </div>
       <br />
       <br />
       <div class="rememberMe">
-        <label class="checkme">
+        <label class="checkme" for="Remember me on this computer">
           Remember me on this computer
-          <input id="Remember me on this computer" type="checkbox">
         </label>
+        <input id="Remember me on this computer" type="checkbox">
       </div>
     </div>
   </body>
