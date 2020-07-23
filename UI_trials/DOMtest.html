@@ -1,0 +1,41 @@
+<html>
+
+<body>
+    <h1>Using selector as an input</h1>
+
+    <p>Choose an option in the drop-down list and display that option.</p>
+
+    <form>
+        <select id="mySelect" onchange="changefun()">
+            <option value="Apple">Apple</option>
+            <option value="Orange">Orange</option>
+            <option value="Pineapple">Pineapple</option>
+            <option value="Banana">Banana</option>
+        </select>
+    </form>
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+        var x = "";
+        var i = 10;
+        function changefun() {
+            x = document.getElementById("mySelect");
+            i = x.selectedIndex;
+            return x.options[i].value;
+        }
+        // setInterval(function(){
+        //     var x = document.getElementById("mySelect");
+        //     var i = x.selectedIndex;
+        // }, delayinMilliSec);
+        function myFunction() {
+            // document.getElementById("demo").innerHTML = x.options[i].value;
+            document.getElementById("demo").innerHTML = changefun();
+
+        }
+    </script>
+
+</body>
+
+</html>
