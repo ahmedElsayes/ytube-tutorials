@@ -1,4 +1,6 @@
 .venv/**
 water-tank project/*
 *.CSV
+*.png
+*.mp3
 react_practice/my-app/node_modules**
