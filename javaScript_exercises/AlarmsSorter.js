@@ -1,9 +1,3 @@
-
-let var1 = require('./example-data.json');
-let var2 = [1, 5, 8];
-let var3 = ["ahmed", "mahmoud", "Ali"];
-let var4 = require('./example2.json');
-
 const sample = [{
     message: "Not possible to open pulsing valve",
     timestamp: "21.11.2019, 10:15",
@@ -59,8 +53,19 @@ const sample = [{
     messagegroup: "Actuator",
     state: "Active"
 }];
+let var1 = require('./example-data.json');
+let var2 = [1, 5, 8];
+let var3 = ["ahmed", "mahmoud", "Ali"];
+// let var4 = require('./example2.json');
 
-
+var alarms = [];
+for (let index = 0; index < var1.length; index++) {
+    const element = var1[index];
+    if (element.priority==="Alarm"){
+        alarms.push(element);
+        console.log(index + ":  " + element.priority);
+    }
+}
 // var alarms = [];
 // sample.map((instance,indx) => {
 //     if (instance.priority === "Alarm"){
