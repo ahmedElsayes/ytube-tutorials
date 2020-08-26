@@ -1,0 +1,58 @@
+[
+  {
+    "message": "Not possible to open pulsing valve",
+    "timestamp": "21.11.2019, 10:15",
+    "functionid": "SALADIN_process",
+    "sourceid": "V419",
+    "value": 0,
+    "unit": "any",
+    "priority": "Alarm",
+    "messagegroup": "Actuator",
+    "state": "Active"
+  },
+  {
+    "message": "Not possible to switch on vaccum pump",
+    "timestamp": "22.11.2019, 10:15",
+    "functionid": "SALADIN_process",
+    "sourceid": "V440",
+    "value": 1,
+    "unit": "any",
+    "priority": "Warning",
+    "messagegroup": "Actuator",
+    "state": "Active"
+  },
+  {
+    "message": "Not possible to read temperature",
+    "timestamp": "23.11.2019, 10:15",
+    "functionid": "SALADIN_process",
+    "sourceid": "V412",
+    "value": 2,
+    "unit": "any",
+    "priority": "Alarm",
+    "messagegroup": "Sensor",
+    "state": "Active"
+  },
+  {
+    "message": "Not possible to read pressure of IMS",
+    "timestamp": "24.11.2019, 10:15",
+    "functionid": "SALADIN_process",
+    "sourceid": "V415",
+    "value": 3,
+    "unit": "any",
+    "priority": "Warning",
+    "messagegroup": "Sensor",
+    "state": "Active"
+  },
+  {
+    "message": "Not possible to open ventlation valve",
+    "timestamp": "25.11.2019, 10:15",
+    "functionid": "SALADIN_process",
+    "sourceid": "V500",
+    "value": 4,
+    "unit": "any",
+    "priority": "Information",
+    "messagegroup": "Actuator",
+    "state": "Active"
+  }
+  
+]
