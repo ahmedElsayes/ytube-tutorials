@@ -1,0 +1,4 @@
+
+1- run// npm install -g typescript          to install type script glopally on your machine
+
+2- run// tsc <your file> -w          ## to compile the typescript file to javascript file and run it in a watch mode 

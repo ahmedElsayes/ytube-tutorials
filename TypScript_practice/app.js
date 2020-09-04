@@ -30,7 +30,7 @@ var scholar = /** @class */ (function () {
     }
     //defining a method
     scholar.prototype.task = function () {
-        return this.fullname + " studies any thing";
+        return this.fullname + " studies anything";
     };
     return scholar;
 }());
@@ -47,7 +47,7 @@ var student = /** @class */ (function (_super) {
     };
     return student;
 }(scholar));
-var person1 = new scholar("Ali", "abdelrahman");
-var person2 = new student("Ahmed", "Elsayes", "Automation Engineering");
+var person1 = new scholar("hazem", "abdelrahman");
+var person2 = new student("hassan", "Elsayes", "Automation Engineering");
 document.getElementById("third").innerHTML = person1.task();
 document.getElementById("forth").innerHTML = person2.task();

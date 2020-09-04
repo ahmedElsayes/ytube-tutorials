@@ -26,7 +26,7 @@ class scholar{
     }
     //defining a method
     task(){
-        return this.fullname + " studies any thing";
+        return this.fullname + " studies anything";
     }
 }
 // example of creating a subclass that inherites
@@ -40,7 +40,7 @@ class student extends scholar{
         return this.fullname + " studies " + this.material;
     }
 }
-let person1 = new scholar("Ali", "abdelrahman");
-let person2 = new student("Ahmed", "Elsayes", "Automation Engineering");
+let person1 = new scholar("hazem", "abdelrahman");
+let person2 = new student("hassan", "Elsayes", "Automation Engineering");
 document.getElementById("third").innerHTML = person1.task();
 document.getElementById("forth").innerHTML = person2.task();
