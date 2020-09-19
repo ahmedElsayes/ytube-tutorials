@@ -31,6 +31,7 @@ function App() {
             id={index}
             title={noteItem.title}
             content={noteItem.content}
+            noteselect={noteItem.noteselect}
             del={deletNote}
           />
         );
