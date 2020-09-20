@@ -67,7 +67,7 @@ footer p {
   outline: none;
 }
 
-form {
+.notes-editor {
   position: relative;
   width: 480px;
   margin: 30px auto 20px auto;
@@ -76,8 +76,8 @@ form {
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
-form input,
-form textarea {
+.notes-editor input,
+.notes-editor textarea {
   width: 100%;
   border: none;
   padding: 4px;
@@ -86,7 +86,7 @@ form textarea {
   font-family: inherit;
   resize: none;
 }
-form button {
+.notes-editor button {
   position: absolute;
   right: 18px;
   bottom: -18px;
@@ -99,4 +99,57 @@ form button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+
+.container {
+  margin: 10% auto;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 40px;
+  font-weight: 200;
+}
+
+.logging-form {
+  padding: 20px 0;
+  position: relative;
+}
+.logging-form input {
+  border: 1px solid rgba(252, 252, 252, 0.4);
+  background-color: rgba(252, 252, 252, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+}
+
+.logging-form button {
+  appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  color: #50a3a2;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 18px;
+}
+
+.about-page {
+  font-size: 25px;
+  width: 170px;
+  margin: 10% auto;
+  padding: 20px 0;
+  text-align: center;
+}
+.about-page:hover {
+  background-color:#4529a8;
 }

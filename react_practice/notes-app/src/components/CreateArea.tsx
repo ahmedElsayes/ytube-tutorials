@@ -4,6 +4,8 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import InputLabel from "@material-ui/core/InputLabel";
 
+// npm install @types/react-router-dom    # to install react routes in typescript project
+// npm install @material-ui/core          # to install material-ui in typescript project
 interface proptype {
   onadd: Function;
 }
@@ -37,7 +39,7 @@ function CreateArea(props: proptype) {
   }
 
   return (
-    <div>
+    <div className="notes-editor">
       <form>
         <input
           name="title"
