@@ -67,7 +67,7 @@ function CreateArea(props: proptype) {
           </option>
         </select> */}
         <InputLabel id="demo-simple-select-label">Note type</InputLabel>
-        <Select
+        <Select className="dropdownMenu"
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="noteselect"
