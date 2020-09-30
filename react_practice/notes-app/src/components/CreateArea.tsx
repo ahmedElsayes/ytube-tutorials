@@ -3,8 +3,6 @@ import AddIcon from "@material-ui/icons/Add";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import InputLabel from "@material-ui/core/InputLabel";
-import { type } from "os";
-
 // npm install @types/react-router-dom    # to install react routes in typescript project
 // npm install @material-ui/core          # to install material-ui in typescript project
 
@@ -30,7 +28,18 @@ export default function CreateArea({onadd}: proptype) {
     });
   }
 
-  function buttonpress(event: any) {
+  // function handleChange1(event: any) {
+  //   const { name, value } = event.target;
+  //   // console.log(value);
+  //   setNote((prevNote) => {
+  //     console.log(prevNote);
+  //     return {
+  //       ...prevNote,
+  //       title: value,
+  //     };
+  //   });
+  // }
+  function buttonpress(event:any) {
     onadd(note);
     setNote({
       title: "",
