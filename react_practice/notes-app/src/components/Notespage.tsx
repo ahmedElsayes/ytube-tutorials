@@ -2,17 +2,24 @@ import React, { useState } from "react";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 
+type NoteType = {
+  title: string;
+  content: string;
+  noteselect: string;
+};
+
 function Notespage() {
+ 
   const [notes, setnotes] = useState([]);
-  function addnote(newNote: any) {
-    setnotes((preNotes: any): any => {
+  function addnote(newNote: NoteType) {
+    setnotes((preNotes: NoteType[]): any => {
       return [...preNotes, newNote];
     });
   }
 
   function deletNote(id: number) {
-    setnotes((prevNotes: any): any => {
-      return prevNotes.filter((noteItem: any, index: number) => {
+    setnotes((prevNotes: NoteType[]): any => {
+      return prevNotes.filter((noteItem: NoteType, index: number) => {
         return index !== id;
       });
     });

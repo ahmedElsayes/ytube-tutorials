@@ -1,7 +1,7 @@
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 
-export type proptypes={
+type proptypes={
   key: number;
   id: number;
   title: string;
