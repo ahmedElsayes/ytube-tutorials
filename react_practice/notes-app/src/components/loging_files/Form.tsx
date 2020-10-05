@@ -29,7 +29,10 @@ function Form(props: typeprops) {
         onMouseOver={mousein}
         type="submit"
         onMouseOut={mouseout}
-        style={{ backgroundColor: buttcolor ? "black" : "white" }}
+        style={{
+          backgroundColor: buttcolor ? "black" : "white",
+          color: buttcolor ? "white" : "black"
+          }}
       >
         {props.Bname}
       </button>
