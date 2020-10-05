@@ -7,7 +7,7 @@ type proptypes={
   title: string;
   content: string;
   noteselect: string;
-  del: Function;
+  del: (id: number) => void;
 }
 function Note(props: proptypes) {
   function handlClick() {

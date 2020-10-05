@@ -48,21 +48,28 @@ export default function CreateArea({onadd}: proptype) {
     });
     event.preventDefault();
   }
+  const [textSpace, setTextSpace] = useState(false);
+  function expandText(){
+    setTextSpace(true);
+  }
 
   return (
     <div className="notes-editor">
       <form>
-        <input
+        {textSpace ? <input
           name="title"
           value={note.title}
           placeholder="Title"
           onChange={handleChange}
-        />
+        />: null}
+        
         <textarea
           value={note.content}
+          onClick={expandText}
           name="content"
           placeholder="Take a note..."
           onChange={handleChange}
+          rows={textSpace ? 5 : 2}
         />
 
         {/* <select

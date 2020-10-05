@@ -3,6 +3,8 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 
 type NoteType = {
+  key: number;
+  id: number;
   title: string;
   content: string;
   noteselect: string;
