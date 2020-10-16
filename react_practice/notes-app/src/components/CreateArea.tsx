@@ -3,6 +3,7 @@ import AddIcon from "@material-ui/icons/Add";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import InputLabel from "@material-ui/core/InputLabel";
+import classNames from "classnames";
 // npm install @types/react-router-dom    # to install react routes in typescript project
 // npm install @material-ui/core          # to install material-ui in typescript project
 
@@ -39,7 +40,9 @@ export default function CreateArea({onadd}: proptype) {
   //     };
   //   });
   // }
+  const [pressed, setPressed] = useState(false);
   function buttonpress(event:any) {
+    setPressed(!pressed);
     onadd(note);
     setNote({
       title: "",
@@ -56,13 +59,15 @@ export default function CreateArea({onadd}: proptype) {
   return (
     <div className="notes-editor">
       <form>
-        {textSpace ? <input
-          name="title"
-          value={note.title}
-          placeholder="Title"
-          onChange={handleChange}
-        />: null}
-        
+        {textSpace ? (
+          <input
+            name="title"
+            value={note.title}
+            placeholder="Title"
+            onChange={handleChange}
+          />
+        ) : null}
+
         <textarea
           value={note.content}
           onClick={expandText}
@@ -99,7 +104,7 @@ export default function CreateArea({onadd}: proptype) {
             Another purposes
           </MenuItem>
         </Select>
-        <button onClick={buttonpress}>
+        <button className={classNames("note_button--idle", {"note_button--active": pressed})} onClick={buttonpress}>
           <AddIcon />
         </button>
       </form>

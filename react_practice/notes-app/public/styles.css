@@ -68,6 +68,7 @@ footer p {
   outline: none;
 }
 
+
 .notes-editor {
   position: relative;
   width: 480px;
@@ -94,7 +95,7 @@ footer p {
   text-align: right;
   margin-top: 20px;
 }
-.notes-editor button {
+.notes-editor .note_button--idle {
   position: absolute;
   right: 18px;
   bottom: -18px;
@@ -105,6 +106,20 @@ footer p {
   width: 36px;
   height: 36px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+.notes-editor .note_button--active {
+  position: relative;
+  float: right;
+  right: 18px;
+  bottom: -18px;
+  margin-right: 10px;
+  background: #e73e14;
+  border: none;
+  width: 45px;
+  height: 45px;
   cursor: pointer;
   outline: none;
 }
@@ -163,4 +178,5 @@ footer p {
 .about-page:hover {
   background-color:#2393fc;
   color: #ffffff;
+  transform: rotate(20deg);
 }

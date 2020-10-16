@@ -2,7 +2,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,9 +13,13 @@ var __extends = (this && this.__extends) || (function () {
 })();
 // functions in typescript
 function App(user) {
-    return "Hello " + user.toString(); // This just to enshur that whatever i type will be string
+    return "Hello " + user; // This just to enshur that whatever i type will be string
 }
-var myname = "ahmed";
+var myname = "Ahmed";
+var num = prompt("Please enter a number");
+// let testnum = parseInt(num);
+// let myname = prompt("Please enter your name");
+document.getElementById("zero").innerHTML = num;
 document.getElementById("first").innerHTML = App(myname);
 function Proname(someone) {
     return "Hello " + someone.firstname + " " + someone.secondname;
@@ -43,11 +47,11 @@ var student = /** @class */ (function (_super) {
         return _this;
     }
     student.prototype.task = function () {
-        return this.fullname + " studies " + this.material;
+        return this.fullname + " studies " + this.material.map(function (subItem) { return " " + subItem; });
     };
     return student;
 }(scholar));
 var person1 = new scholar("hazem", "abdelrahman");
-var person2 = new student("hassan", "Elsayes", "Automation Engineering");
+var person2 = new student("hassan", "Elsayes", ["Automation", "software", "cyberSecurity"]);
 document.getElementById("third").innerHTML = person1.task();
 document.getElementById("forth").innerHTML = person2.task();

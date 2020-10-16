@@ -27,6 +27,14 @@ function Notespage() {
     });
   }
 
+  const scores = [[10, 2], [4, 5], [0, 3]];
+  const newScore = scores.map(function(subarray) {
+    return subarray.map(function(number) {
+      return number * 2;
+    })
+  })
+  console.log(newScore);
+
   return (
     <div>
       <CreateArea onadd={addnote} />
