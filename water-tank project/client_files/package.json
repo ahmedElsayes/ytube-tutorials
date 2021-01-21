@@ -14,7 +14,7 @@
     "node-opcua": "^2.16.0",
     "npm": "^6.14.8",
     "semver": "^5.5.0",
-    "socket.io": "^2.1.0",
+    "socket.io": "^2.4.0",
     "water-tank": "^1.2.0"
   }
 }
